@@ -1,0 +1,299 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 10vh 60vh 0fr 1fr 1fr;
+    background-color:beige;
+    grid-gap: 5px;
+    grid-template-areas:
+    "header"
+    "hero"
+    "main"
+    "main"
+    "sidebar"
+    "footer"
+}
+
+header {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    grid-template-areas: 
+    "header header"
+    "brand brand"
+    "nav tools"
+    ;
+    font-weight: 800;
+    grid-gap: 5px;
+    background-color: rgb(238, 238, 188);
+}
+
+.brand {
+    grid-area: brand;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 164);
+}
+
+.nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 164);
+}
+
+.tools {
+    grid-area: tools;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 164);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    font-weight: 800;
+    background-color: rgb(238, 238, 188);
+    grid-template-areas: 
+    "hero"
+    "calltoarms"
+
+}
+
+.hero-feature {
+    display:none
+}
+
+.calltoarms {
+    grid-area: calltoarms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 164);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 2fr 3fr 2fr;
+    grid-template-areas: 
+    "main"
+    "article1"
+    "ad"
+    "article2";
+    font-weight: 800;
+    background-color: rgb(238, 238, 188); 
+    grid-gap: 5px;   
+}
+
+.article1 {
+    grid-area: article1;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 164);
+}
+
+.phone-ad {
+    grid-area: ad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 161);
+}
+
+.article2 {
+    grid-area: article2;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 202, 164);
+}
+
+.cat-ad {
+    display:none;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: none;
+}
+
+footer {
+    grid-area: footer;
+    font-weight: 800;
+    grid-gap: 5px;
+    background-color: rgb(238, 238, 188);
+}
+
+.cat-pic {
+    height: 80px;
+}
+
+@media screen and (min-width: 576px) {
+    header {
+        display: grid;
+        grid-template-columns: 2fr 4fr 2fr;
+        grid-template-rows: 2fr 2fr;
+        grid-template-areas: 
+        "header header header"
+        "brand nav tools"
+        ;
+        font-weight: 800;
+        grid-gap: 5px;
+        background-color: rgb(238, 238, 188);
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 2fr;
+        font-weight: 800;
+        background-color: rgb(238, 238, 188);
+        grid-template-areas: 
+        "hero"
+        "hero-feature"
+        "calltoarms";
+        grid-gap: 5px;
+    }
+
+    .hero-feature {
+        display: block;
+        grid-area: hero-feature;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(202, 202, 164)
+
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 0.5fr 2fr 3fr;
+        grid-template-areas: 
+        "main main"
+        "article1 ad"
+        "article2 article2";
+        font-weight: 800;
+        background-color: rgb(238, 238, 188); 
+        grid-gap: 5px;   
+    }
+
+    .phone-ad {
+        grid-area: ad;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(240, 240, 161);
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        display: block;
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-template-rows: 2fr 4fr;
+        grid-template-areas: 
+        "sidebar"
+        "sidebar-feature"
+        ;
+        font-weight: 800;
+        background-color: rgb(238, 238, 188); 
+        grid-gap: 5px; 
+    } 
+    
+    .sidebar-feature {
+        grid-area: sidebar-feature;
+        background-color: rgb(202, 202, 164);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 0.6fr 1fr 1fr 0.5fr 0.5fr fr;
+        background-color:beige;
+        grid-gap: 5px;
+        grid-template-areas:
+        "header header header"
+        "hero hero desktop"
+        "main main sidebar"
+        "main main sidebar"
+        "footer footer footer";
+    }
+
+    .cat-ad {
+        grid-area: desktop;
+        display:block;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .phone-ad {
+        display: none;
+    }
+
+    header {
+        grid-area: header;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 2fr 3fr;
+        grid-template-areas: 
+        "main main main"
+        "article1 article2 article2"
+        "article1 article2 article2";
+        font-weight: 800;
+        background-color: rgb(238, 238, 188); 
+        grid-gap: 5px;   
+    }
+
+    .hero {
+        grid-area: hero;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr;
+        font-weight: 800;
+        background-color: rgb(238, 238, 188);
+        grid-template-areas: 
+        "hero hero hero"
+        "hero-feature hero-feature calltoarms"
+        "hero-feature hero-feature calltoarms";
+        grid-gap: 5px;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        display: block;
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-template-rows: 0.5fr 5fr;
+        grid-template-areas: 
+        "sidebar"
+        "sidebar-feature"
+        ;
+        font-weight: 800;
+        background-color: rgb(238, 238, 188); 
+        grid-gap: 5px; 
+    } 
+
+    main {
+        grid-area: main;
+    }
+
+}
